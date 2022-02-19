@@ -10,6 +10,8 @@ public class shootBallon2 : MonoBehaviour
     public float intensité;
     private float distance;
     private Vector3 difference;
+    /*private float xx;
+    private float yy;*/
     void Start()
     {
         
@@ -19,10 +21,13 @@ public class shootBallon2 : MonoBehaviour
     void Update()
     {
         difference = (transform.position - player.transform.position); // on récup le vecteur directeur sur lequel on va faire l'envoie
+        /*xx = Mathf.Sign(difference.x);
+        yy = Mathf.Sign(difference.y);*/
         distance = difference.magnitude; // on récup que la direction dans le plan
         if (distance<distanceMin){
             Debug.Log("touched !!");
-        GetComponent<Rigidbody>().AddForce(difference.x*intensité, intensité*2,difference.y*intensité);
+            difference.Normalize();
+            GetComponent<Rigidbody>().AddForce(difference.x*intensité, intensité*2,difference.y*intensité);
         }
         
     }
