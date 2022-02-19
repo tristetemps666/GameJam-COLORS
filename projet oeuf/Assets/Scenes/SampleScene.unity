@@ -401,9 +401,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 500768046}
-  - component: {fileID: 500768045}
-  - component: {fileID: 500768044}
-  - component: {fileID: 500768043}
   - component: {fileID: 500768042}
   - component: {fileID: 500768041}
   m_Layer: 0
@@ -453,19 +450,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!64 &500768043
-MeshCollider:
+--- !u!33 &500768043
+MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500768040}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &500768044
 MeshRenderer:
@@ -486,7 +477,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6f846cae6f4fa324f8ecff2b66e1ef42, type: 2}
+  - {fileID: 2100000, guid: 2ecdd5be4a94827419006fc6363b2dc0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -508,14 +499,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &500768045
-MeshFilter:
+--- !u!95 &500768045
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500768040}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1ae27ce60522cb745976607cd7d3e012, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &500768046
 Transform:
   m_ObjectHideFlags: 0
@@ -873,6 +875,8 @@ GameObject:
   - component: {fileID: 1020167620}
   - component: {fileID: 1020167622}
   - component: {fileID: 1020167623}
+  - component: {fileID: 1020167625}
+  - component: {fileID: 1020167624}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
