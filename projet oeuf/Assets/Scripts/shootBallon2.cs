@@ -6,6 +6,8 @@ public class shootBallon2 : MonoBehaviour
 {
     // Start is called before the first frame update
     public Transform player;
+
+    public Animator AnimPlayer;
     public float distanceMin;
     public float intensité;
     private float distance;
@@ -18,16 +20,19 @@ public class shootBallon2 : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        difference = (transform.position - player.transform.position); // on récup le vecteur directeur sur lequel on va faire l'envoie
+        difference = (transform.position - player.position); // on récup le vecteur directeur sur lequel on va faire l'envoie
         /*xx = Mathf.Sign(difference.x);
         yy = Mathf.Sign(difference.y);*/
         distance = difference.magnitude; // on récup que la direction dans le plan
         if (distance<distanceMin){
             Debug.Log("touched !!");
             difference.Normalize();
-            GetComponent<Rigidbody>().AddForce(difference.x*intensité, intensité*2,difference.y*intensité);
+            Debug.Log(difference);
+            GetComponent<Rigidbody>().AddForce(difference.x*intensité, intensité*4,difference.y*intensité);
+
+            AnimPlayer.SetBool("shoot", true);
         }
         
     }

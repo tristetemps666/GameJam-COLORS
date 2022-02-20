@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: anim_marche_droite
+  m_Name: shootBallDroit
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,9 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 2100000, guid: cff5e67c4ac17e544835469f5da52de8, type: 2}
-    - time: 0.25
-      value: {fileID: 2100000, guid: 0301749d36f90044a8707dbcf0261698, type: 2}
-    - time: 0.48333332
-      value: {fileID: 2100000, guid: 4066874d7681c2a44b4e8fc6655479b2, type: 2}
-    - time: 0.75
-      value: {fileID: 2100000, guid: 4066874d7681c2a44b4e8fc6655479b2, type: 2}
+      value: {fileID: 2100000, guid: 42a8b85d9c2b4f64ebcf10ddc78e8eb7, type: 2}
+    - time: 0.6666667
+      value: {fileID: 2100000, guid: 42a8b85d9c2b4f64ebcf10ddc78e8eb7, type: 2}
     attribute: m_Materials.Array.data[0]
     path: 
     classID: 23
@@ -46,16 +42,14 @@ AnimationClip:
       customType: 21
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 2100000, guid: cff5e67c4ac17e544835469f5da52de8, type: 2}
-    - {fileID: 2100000, guid: 0301749d36f90044a8707dbcf0261698, type: 2}
-    - {fileID: 2100000, guid: 4066874d7681c2a44b4e8fc6655479b2, type: 2}
-    - {fileID: 2100000, guid: 4066874d7681c2a44b4e8fc6655479b2, type: 2}
+    - {fileID: 2100000, guid: 42a8b85d9c2b4f64ebcf10ddc78e8eb7, type: 2}
+    - {fileID: 2100000, guid: 42a8b85d9c2b4f64ebcf10ddc78e8eb7, type: 2}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.76666665
+    m_StopTime: 0.68333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

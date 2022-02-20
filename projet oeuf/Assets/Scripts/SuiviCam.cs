@@ -6,7 +6,7 @@ public class SuiviCam : MonoBehaviour
 {
     // Start is called before the first frame update
     public Transform targetObject;
-    public float smoothSpeed = 0.001f;
+    public float smoothSpeed = 0.125f;
     private Vector3 cameraOffset;
     public Vector3 cameraPos;
 
