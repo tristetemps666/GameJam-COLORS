@@ -56,6 +56,17 @@ public class deplacements : MonoBehaviour
                 animator.SetBool("gauche", false);
             }
         }
+        if (horizontal !=0 || vertical !=0){ // on se déplace
+            if (!source.isPlaying){
+               //Debug.Log("SOOOOOOOON !!");
+                source.PlayOneShot(mySound);
+            }
+        }
+
+        if (horizontal == 0 && vertical == 0){ // on est fixe
+            source.Stop();
+            //Debug.Log("STOOOOP   SOOOOOOOON !!");
+        }
 
 
         Vector3 direction = mainCamera.transform.TransformDirection(horizontal, 0, vertical);

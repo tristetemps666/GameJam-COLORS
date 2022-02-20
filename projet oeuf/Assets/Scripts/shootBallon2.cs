@@ -12,6 +12,10 @@ public class shootBallon2 : MonoBehaviour
     public float intensité;
     private float distance;
     private Vector3 difference;
+
+    public AudioSource source;
+    public AudioClip mySound;
+
     /*private float xx;
     private float yy;*/
     void Start()
@@ -23,6 +27,7 @@ public class shootBallon2 : MonoBehaviour
     void LateUpdate()
     {
         difference = (transform.position - player.position); // on récup le vecteur directeur sur lequel on va faire l'envoie
+        Debug.Log(difference.magnitude);
         /*xx = Mathf.Sign(difference.x);
         yy = Mathf.Sign(difference.y);*/
         distance = difference.magnitude; // on récup que la direction dans le plan
@@ -30,9 +35,13 @@ public class shootBallon2 : MonoBehaviour
             Debug.Log("touched !!");
             difference.Normalize();
             Debug.Log(difference);
-            GetComponent<Rigidbody>().AddForce(difference.x*intensité, intensité*4,difference.y*intensité);
+            GetComponent<Rigidbody>().AddForce(difference.x*intensité, intensité*2,difference.y*intensité);
 
             AnimPlayer.SetBool("shoot", true);
+            if (!source.isPlaying){
+                Debug.Log("SOOOOOOOON BALLON !!");
+                source.PlayOneShot(mySound);
+            }
         }
         
     }
