@@ -26,7 +26,6 @@ public class SuiviCam : MonoBehaviour
             Vector3 smoothPosition = Vector3.Lerp(transform.position,desiredPosition, smoothSpeed);
             
             transform.position = smoothPosition;
-            //transform.LookAt(targetObject);
         //}
 
         /*if (pointe){
