@@ -30,7 +30,7 @@ public class shootBallon2 : MonoBehaviour
             Debug.Log("touched !!");
             difference.Normalize();
             Debug.Log(difference);
-            GetComponent<Rigidbody>().AddForce(difference.x*intensité, intensité*4,difference.y*intensité);
+            GetComponent<Rigidbody>().AddForce(difference.x*intensité, intensité*2,difference.y*intensité);
 
             AnimPlayer.SetBool("shoot", true);
         }

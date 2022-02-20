@@ -52,6 +52,10 @@ public class deplacements : MonoBehaviour
         Vector3 direction = mainCamera.transform.TransformDirection(horizontal, 0, vertical);
         direction *= speed;
         controller.SimpleMove(direction); 
+        
+        
+        
+        ////// LA PARTIE POUR LA SAUTERELLE
         /*if (aSuivre.name == "Personnage"){
         Vector3 direction = mainCamera.transform.TransformDirection(horizontal, 0, vertical);
         direction *= speed;
@@ -63,6 +67,4 @@ public class deplacements : MonoBehaviour
             }
         */
         }
-    }
-
 }
