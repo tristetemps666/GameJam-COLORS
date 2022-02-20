@@ -17,6 +17,9 @@ public class deplacements : MonoBehaviour
     private float distance; 
     public Camera mainCamera;
 
+    public AudioSource source;
+    public AudioClip mySound;
+
     // Start is called before the first frame update
     void Start(){
 
@@ -47,24 +50,22 @@ public class deplacements : MonoBehaviour
                 animator.SetBool("gauche", false);
             }
         }
-
-
-        Vector3 direction = mainCamera.transform.TransformDirection(horizontal, 0, vertical);
-        direction *= speed;
-        controller.SimpleMove(direction); 
-        
-        
-        
-        ////// LA PARTIE POUR LA SAUTERELLE
-        /*if (aSuivre.name == "Personnage"){
-        Vector3 direction = mainCamera.transform.TransformDirection(horizontal, 0, vertical);
-        direction *= speed;
-        controller.SimpleMove(direction); 
-
-            if (distance > 3){ // trop loin, doit se rapprocher
-                diff.Normalize();
-                controller.Move(diff *speed*Time.deltaTime);
+        if (horizontal !=0 || vertical !=0){ // on se déplace
+            if (!source.isPlaying){
+               //Debug.Log("SOOOOOOOON !!");
+                source.PlayOneShot(mySound);
             }
-        */
+        }
+
+        if (horizontal == 0 && vertical == 0){ // on est fixe
+            source.Stop();
+            //Debug.Log("STOOOOP   SOOOOOOOON !!");
+        }
+
+
+        Vector3 direction = mainCamera.transform.TransformDirection(horizontal, 0, vertical);
+        direction *= speed;
+        controller.SimpleMove(direction); 
+        
         }
 }
