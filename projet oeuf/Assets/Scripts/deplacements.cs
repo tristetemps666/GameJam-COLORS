@@ -17,16 +17,25 @@ public class deplacements : MonoBehaviour
     private float distance; 
     public Camera mainCamera;
 
-    // Start is called before the first frame update
-    void Start(){
+    private bool finIntro=false;
+    
+
+    // Update is called once per frame
+    void Start()
+    {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-        //// GESTION DES ANIMATIONS POUR LE PERSO
+        if (Input.GetKey("a"))
+        {
+            finIntro=true;
+        }
+
+        if (finIntro==true)
+        {
+            //// GESTION DES ANIMATIONS POUR LE PERSO
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         if (name == "Personnage"){
@@ -52,17 +61,9 @@ public class deplacements : MonoBehaviour
         Vector3 direction = mainCamera.transform.TransformDirection(horizontal, 0, vertical);
         direction *= speed;
         controller.SimpleMove(direction); 
-        /*if (aSuivre.name == "Personnage"){
-        Vector3 direction = mainCamera.transform.TransformDirection(horizontal, 0, vertical);
-        direction *= speed;
-        controller.SimpleMove(direction); 
 
-            if (distance > 3){ // trop loin, doit se rapprocher
-                diff.Normalize();
-                controller.Move(diff *speed*Time.deltaTime);
-            }
-        */
         }
     }
-
 }
+
+
