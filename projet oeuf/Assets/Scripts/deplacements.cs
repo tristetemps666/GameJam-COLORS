@@ -15,6 +15,7 @@ public class deplacements : MonoBehaviour
 
     public GameObject aSuivre;
     private float distance; 
+    public Camera mainCamera;
 
     // Start is called before the first frame update
     void Start(){
@@ -24,16 +25,14 @@ public class deplacements : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //// SETUP DES VAR
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-    
-        Vector3 direction = new Vector3(horizontal, -1f, vertical).normalized;
-
         
         //// GESTION DES ANIMATIONS POUR LE PERSO
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
         if (name == "Personnage"){
             
+           
+           
             if (horizontal == 1){
                 animator.SetBool("droite", true);
             }
@@ -49,23 +48,21 @@ public class deplacements : MonoBehaviour
             }
         }
 
-        
-        //// DEPLACEMENT APPLIQUER
-        if (direction.magnitude >= 0.1f){
-            controller.Move(direction *speed*Time.deltaTime);
-        }
 
-        // Pour la sauterelle follow le man
+        Vector3 direction = mainCamera.transform.TransformDirection(horizontal, 0, vertical);
+        direction *= speed;
+        controller.SimpleMove(direction); 
+        /*if (aSuivre.name == "Personnage"){
+        Vector3 direction = mainCamera.transform.TransformDirection(horizontal, 0, vertical);
+        direction *= speed;
+        controller.SimpleMove(direction); 
 
-        if (aSuivre.name == "Personnage"){
-            diff = (aSuivre.transform.position - transform.position);
-            distance = diff.magnitude;
             if (distance > 3){ // trop loin, doit se rapprocher
                 diff.Normalize();
                 controller.Move(diff *speed*Time.deltaTime);
             }
+        */
         }
-        //controller.Move(grav*Time.deltaTime);
     }
 
 }
